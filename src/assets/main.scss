@@ -10,13 +10,13 @@ body {
   height: 100vh;
   text-align: center;
   box-sizing: border-box;
-  background: url('/background.png') top center/cover no-repeat;
+  background: url('/background.webp') top center/cover no-repeat;
   color: #ffff;
 }
 
 @media (max-width: 767px) {
   body {
-    background: url('/background_mobile.png') top center/cover no-repeat;
+    background: url('/background_mobile.webp') top center/cover no-repeat;
   }
 }
 

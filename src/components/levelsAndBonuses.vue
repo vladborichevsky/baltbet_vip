@@ -101,8 +101,8 @@
     setup() {
       return {
         modules: [EffectCube, Pagination, Autoplay]
-      };
-    },
+      }
+    }
   };
 </script>
 

@@ -11,13 +11,13 @@
     </div>
 
     <div class="home_screen_image">
-      <img class="home_screen_image_crown" src="/crown.png" alt="crown">
-      <img class="home_screen_image_main" src="/picture.png" alt="image">
+      <img class="home_screen_image_crown" src="/crown.webp" alt="crown">
+      <img class="home_screen_image_main" src="/picture.webp" alt="image">
     </div>
 
     <div class="home_screen_image_mobile">
-      <img class="home_screen_image_crown" src="/crown.png" alt="crown">
-      <img class="home_screen_image_main" src="/picture_mobile.png" alt="image">
+      <img class="home_screen_image_crown" src="/crown.webp" alt="crown">
+      <img class="home_screen_image_main" src="/picture_mobile.webp" alt="image">
 
       <p class="home_screen_image_mobile_title">Стань частью<br>элиты с «Балтбет»</p>
 

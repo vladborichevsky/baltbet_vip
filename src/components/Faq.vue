@@ -1,5 +1,6 @@
 <template>
   <div class="faq">
+    
     <h2>Часто<br>задаваемые<br>вопросы (FAQ)</h2>
 
     <faq-item id="question_1">
@@ -44,7 +45,7 @@
 
 
 <script setup>
-    import FaqItem from '@/components/ui/FaqItem.vue'
+  import FaqItem from '@/components/ui/FaqItem.vue'
 </script>
 
 

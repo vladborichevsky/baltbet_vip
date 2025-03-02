@@ -9,7 +9,7 @@
   >
     <swiper-slide>
       <div class="advantages_block_slide">
-        <img src="/advantages_block_1.png" alt="coin">
+        <img src="/advantages_block_1.webp" alt="coin" loading="lazy">
         <div class="advantages_block_slide_info">
           <h2 class="advantages_block_slide_info_title">Преимущества VIP статуса</h2>
           <div class="advantages_block_slide_info_descr">
@@ -24,7 +24,7 @@
 
     <swiper-slide>
       <div class="advantages_block_slide">
-        <img src="/advantages_block_2.png" alt="coin">
+        <img src="/advantages_block_2.webp" alt="coin" loading="lazy">
         <div class="advantages_block_slide_info">
           <div class="advantages_block_slide_info_descr">
             <p class="advantages_block_slide_info_descr_subtitle">Мощный кешбэк</p>
@@ -39,7 +39,7 @@
       
     <swiper-slide>
       <div class="advantages_block_slide">
-      <img src="/advantages_block_3.png" alt="gold_bar">
+      <img src="/advantages_block_3.webp" alt="gold_bar" loading="lazy">
       <div class="advantages_block_slide_info">
         <h2 class="advantages_block_slide_info_title">Преимущества VIP статуса</h2>
         <div class="advantages_block_slide_info_descr">
@@ -73,8 +73,8 @@
     setup() {
       return {
         modules: [ Pagination, Autoplay],
-      };
-    },
+      }
+    }
   };
 </script>
 
