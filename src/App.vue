@@ -18,8 +18,8 @@
   import homeScreen from '@/components/homeScreen.vue'
   import becomeMember from '@/components/becomeMember.vue'
   import levelsAndBonuses from '@/components/levelsAndBonuses.vue'
+  import advantagesBlock from '@/components/advantagesBlock.vue'
 
-  const advantagesBlock = defineAsyncComponent(() => import('@/components/advantagesBlock.vue'))
   const faq = defineAsyncComponent(() => import('@/components/Faq.vue')) // динамически загружаем компонент через mutationObserver
   const footerBlock = defineAsyncComponent(() => import('@/components/footerBlock.vue')) // динамически загружаем компонент через mutationObserver
   

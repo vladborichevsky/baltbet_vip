@@ -1,7 +1,8 @@
 <template>
   <div class="faq">
     
-    <h2>Часто<br>задаваемые<br>вопросы (FAQ)</h2>
+    <h2 class="h2_desc">Часто<br>задаваемые<br>вопросы (FAQ)</h2>
+    <h2 class="h2_mob">Часто задаваемые вопросы (FAQ)</h2>
 
     <faq-item id="question_1">
       <div class="faq_item_question">
@@ -50,7 +51,7 @@
 
 
 <style lang="scss" scoped>
-  h2 {
+  .h2_desc {
     font-weight: 900;
     font-size: 50px;
     text-align: right;
@@ -59,6 +60,10 @@
     grid-column: 1 / 3;
     grid-row: 1 / 1;
     justify-self: center;
+  }
+
+  .h2_mob {
+    display: none;
   }
 
   .faq {
@@ -104,7 +109,7 @@
     }
 
   @media (max-width: 1300px) {
-    h2 {
+    .h2_desc {
       font-size: 45px;
     }
 
@@ -114,7 +119,7 @@
   }
 
   @media (max-width: 1200px) {
-    h2 {
+    .h2_desc {
       font-size: 35px;
     }
   }
@@ -125,13 +130,19 @@
       grid-template-rows: 0.5fr 1fr 1fr 1fr;
     }
 
-    h2 {
+    .h2_desc {
+      display: none;
+    }
+
+    .h2_mob {
+      display: block;
       font-size: 30px;
-      text-align: left;
-      grid-column: 1 / 2;
+      font-weight: 900;
+      text-align: center;
+      grid-column: 1 / 3;
       grid-row: 1 / 2;
-      align-self: end;
-      justify-self: start;
+      margin: 10px;
+      text-shadow: 1px 1px 20px #030513, 1px 1px 20px #030513, 1px 1px 20px #030513, 1px 1px 20px #030513;
     }
 
     #question_1 {
@@ -155,12 +166,10 @@
     }
   }
 
-  @media (max-width: 767px) {
-    h2 {
-      grid-column: 1 / 3;
-    }
-
+  @media (max-width: 768px) {
     .faq_item {
+      padding: 10px;
+
       &_question, &_answer {
         font-size: 15px;
       }
@@ -168,12 +177,16 @@
   }
 
   @media (max-width: 576px) {
-    h2 {
+    .h2_mob {
       font-size: 20px;
+      margin: 0;
+      align-self: center;
     }
 
-    .faq_item {
-      &_question, &_answer {
+    .faq {
+      margin: 0 auto;
+
+      &_item_question, &_item_answer {
         font-size: 11px;
       }
     }

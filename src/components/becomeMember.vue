@@ -1,5 +1,7 @@
 <template>
   <div class="become_member">
+    <h2>Как стать участником</h2>
+
     <div class="become_member_item" id="bm_1">
       <img src="/num-1.svg" alt="number">
       <p>
@@ -13,8 +15,6 @@
         Заключить пари можно на сайте или в мобильном приложении «Балтбет». 
       </p>
     </div>
-
-    <h2>Как стать участником</h2>
   </div>
 </template>
 
@@ -103,30 +103,22 @@
   @media (max-width: 767px) {
     .become_member {
       width: 85%;
-      grid-template-columns: 1fr 1fr 1fr;
+      height: 40vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
 
       &_item {
-        width: 200px;
+        width: 90%;
         font-size: 15px;
-        justify-self: center;
 
         img {
           height: 120px;
         }
       }
 
-      h2 {
-        grid-column: 3 / 4;
+      #bm_1, #bm_2 {
         align-self: center;
-      }
-
-      #bm_1 {
-        grid-column: 1 / 3;
-      }
-
-      #bm_2 {
-        grid-column: 1 / 3;
-        align-self: flex-start;
       }
     }
   }
@@ -138,9 +130,10 @@
 
     .become_member {
       width: 95%;
+      margin: 20px auto;
 
       &_item {
-        width: 140px;
+        width: 70%;
 
         img {
           height: 80px;

@@ -2,7 +2,7 @@
   <div class="levels_and_bonuses">
     <div class="levels_and_bonuses_left">
       <h2 class="levels_and_bonuses_left_title">
-        Уровни<br>и бонусы
+        Уровни и бонусы
       </h2>
       <p class="levels_and_bonuses_left_descr">
         В нашей Акции вы можете повысить свой VIP статус до 60-го уровня и получать бонус «Ставка купоном» вне зависимости от уровня каждый месяц. Уровни символизируют ваш путь от первых шагов в мире ставок до абсолютного профессионализма, а каждое повышение уровня приносит больше уверенности и наград.
@@ -219,6 +219,7 @@
       &_left {
         &_title {
           font-size: 20px;
+          text-align: center;
         }
 
         &_descr {

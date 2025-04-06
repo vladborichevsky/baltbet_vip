@@ -1,4 +1,5 @@
 <template>
+  
   <swiper
     :direction="'vertical'"
     :pagination="false"
@@ -7,19 +8,21 @@
     :modules="modules"
     class="mySwiper"
   >
-    <swiper-slide>
-      <div class="advantages_block_slide">
-        <img src="/advantages_block_1.webp" alt="coin" loading="lazy">
-        <div class="advantages_block_slide_info">
-          <h2 class="advantages_block_slide_info_title">Преимущества VIP статуса</h2>
-          <div class="advantages_block_slide_info_descr">
-            <p class="advantages_block_slide_info_descr_subtitle">VIP-клиент</p>
-            <p class="advantages_block_slide_info_descr_text">
-              Станьте обладателем эксклюзивного VIP статуса абсолютно бесплатно и сохраните его навсегда*!
-            </p>
+    <swiper-slide
+      @touchstart="touchStart"
+      @touchend="touchEndFirstSlide">
+        <div class="advantages_block_slide">
+          <img src="/advantages_block_1.webp" alt="coin" loading="lazy">
+          <div class="advantages_block_slide_info">
+            <h2 class="advantages_block_slide_info_title">Преимущества VIP статуса</h2>
+            <div class="advantages_block_slide_info_descr">
+              <p class="advantages_block_slide_info_descr_subtitle">VIP-клиент</p>
+              <p class="advantages_block_slide_info_descr_text">
+                Станьте обладателем эксклюзивного VIP статуса абсолютно бесплатно и сохраните его навсегда*!
+              </p>
+            </div>
           </div>
         </div>
-      </div>
     </swiper-slide>
 
     <swiper-slide>
@@ -37,18 +40,20 @@
       </div>
     </swiper-slide>
       
-    <swiper-slide>
-      <div class="advantages_block_slide">
-      <img src="/advantages_block_3.webp" alt="gold_bar" loading="lazy">
-      <div class="advantages_block_slide_info">
-        <h2 class="advantages_block_slide_info_title">Преимущества VIP статуса</h2>
-        <div class="advantages_block_slide_info_descr">
-          <p class="advantages_block_slide_info_descr_subtitle">Золотой фрибет</p>
-          <p class="advantages_block_slide_info_descr_text">
-            Каждый месяц открывайте для себя новые возможности с бонусом «Ставка купоном»! Используйте этот ценный подарок, чтобы увеличить свои шансы на выигрыш.
-          </p>
+    <swiper-slide
+      @touchstart="touchStart"
+      @touchend="touchEndLastSlide">  
+        <div class="advantages_block_slide">
+        <img src="/advantages_block_3.webp" alt="gold_bar" loading="lazy">
+        <div class="advantages_block_slide_info">
+          <h2 class="advantages_block_slide_info_title">Преимущества VIP статуса</h2>
+          <div class="advantages_block_slide_info_descr">
+            <p class="advantages_block_slide_info_descr_subtitle">Золотой фрибет</p>
+            <p class="advantages_block_slide_info_descr_text">
+              Каждый месяц открывайте для себя новые возможности с бонусом «Ставка купоном»! Используйте этот ценный подарок, чтобы увеличить свои шансы на выигрыш.
+            </p>
+          </div>
         </div>
-      </div>
     </div>
     </swiper-slide>
 
@@ -70,9 +75,46 @@
       Swiper,
       SwiperSlide,
     },
+
+    data() {
+      return {
+        startY: 0
+      };
+    },
+
+    methods: {
+      touchStart(event) {
+        this.startY = event.touches[0].clientY
+      },
+      touchEndLastSlide(event) {
+        const endY = event.changedTouches[0].clientY
+        const deltaY = this.startY - endY
+
+        if (deltaY > 30) {
+          // Прокрутка вниз на величину свайпа
+          window.scrollBy({
+            top: deltaY,
+            behavior: 'smooth'
+          })
+        }
+      },
+      touchEndFirstSlide(event) {
+        const endY = event.changedTouches[0].clientY
+        const deltaY = this.startY - endY
+
+        if (deltaY < 30) {
+          // Прокрутка вверх на величину свайпа
+          window.scrollBy({
+            top: deltaY,
+            behavior: 'smooth'
+          })
+        }
+      }
+    },
+    
     setup() {
       return {
-        modules: [ Pagination, Autoplay],
+        modules: [ Pagination, Autoplay ]
       }
     }
   };
