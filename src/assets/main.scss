@@ -3,6 +3,16 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Onest', sans-serif;
+}
+
+html {
+  font-size: 62.5%; /* 10px */
+
+  @media (max-width: 992px) { font-size: 56.25%; } // 9px
+  @media (max-width: 768px) { font-size: 50%; }    // 8px
+  @media (max-width: 576px) { font-size: 43.75%; } // 7px
+  @media (max-width: 440px) { font-size: 37.5%; }  // 6px
 }
 
 body {
@@ -12,17 +22,22 @@ body {
   box-sizing: border-box;
   background: url('/background.webp') top center/cover no-repeat;
   color: #ffff;
-}
 
-@media (max-width: 767px) {
-  body {
-    background: url('/background_mobile.webp') top center/cover no-repeat;
+  @media (max-width: 576px) {
+    background: url('/background_mob.webp') top center/cover no-repeat;
   }
 }
 
 #app {
   width: 100%;
   height: 100%;
+}
+
+h2 {
+  font-size: 4.5rem;
+  font-weight: 900;
+
+  @media (max-width: 1200px) { font-size: 3.5rem; }
 }
 
 @font-face {
@@ -44,22 +59,4 @@ body {
   src: local('Onest'), url('../assets/Onest/Onest-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'PlayfairDisplaySC';
-  src: local('PlayfairDisplaySC'), url('../assets/Playfair_Display_SC/PlayfairDisplaySC-Black.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'PlayfairDisplaySC';
-  src: local('PlayfairDisplaySC'), url('../assets/Playfair_Display_SC/PlayfairDisplaySC-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
-
-* {
-  font-family: 'Onest', sans-serif;
 }

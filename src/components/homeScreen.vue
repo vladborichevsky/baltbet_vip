@@ -1,328 +1,205 @@
 <template>
-  <div class="home_screen">
-    <div class="home_screen_header">
-      <a href="https://baltbet.ru/" class="home_screen_logo">
-        <img src="/logo_bb.svg" alt="Логотип компании Балтбет" />
+  <section class="home">
+    <header class="home__header">
+      <a href="https://baltbet.ru/" class="home__logo">
+        <img src="/logo_bb.svg" alt="Логотип компании Балтбет" class="home__logo-img" />
       </a>
 
-      <h1>Присоединяйтесь<br />к VIP статусу «Балтбет»</h1>
+      <h1 class="home__title">Присоединяйтесь<br />к VIP статусу «Балтбет»</h1>
 
-      <main-button id="desktop_btn" />
-    </div>
+      <my-btn id="desktop_btn">Участвовать</my-btn>
+    </header>
 
-    <div class="home_screen_image">
-      <img class="home_screen_image_crown" src="/crown.webp" alt="" />
-      <img class="home_screen_image_main" src="/picture.webp" alt="Игровой вип-зал" />
-    </div>
+    <figure class="home__image">
+      <img class="home__image-crown" src="/crown.webp" alt="" />
+      <img class="home__image-main" src="/pic.webp" alt="Игровой вип-зал" />
+    </figure>
 
-    <div class="home_screen_image_mobile">
-      <img class="home_screen_image_crown" src="/crown.webp" alt="" />
-      <img class="home_screen_image_main" src="/picture_mobile.webp" alt="Игровой вип-зал" />
+    <div class="home__image-mob">
+      <img class="home__image-main" src="/pic_mob.webp" alt="Игровой вип-зал" />
 
-      <p class="home_screen_image_mobile_title">Стань частью<br />элиты с «Балтбет»</p>
+      <p class="home__image-mob-title">Стань частью элиты с «Балтбет»</p>
 
-      <div class="home_screen_image_mobile_infoblock">
-        <div class="home_screen_image_mobile_infoblock_item">
-          <img src="/mobile_icon_1.svg" alt="" />
+      <div class="home__image-mob-infoblock">
+        <div class="home__image-mob-infoblock-item">
           <p>Кешбэк до 8%</p>
         </div>
 
-        <div class="home_screen_image_mobile_infoblock_item" id="dark_infoblock">
-          <img src="/mobile_icon_2.svg" alt="" />
-          <p>Количество фрибетов<br />не ограничено</p>
+        <div class="home__image-mob-infoblock-item home__image-mob-infoblock-item--dark">
+          <p>Количество фрибетов не ограничено</p>
         </div>
 
-        <div class="home_screen_image_mobile_infoblock_item">
-          <img src="/mobile_icon_3.svg" alt="" />
-          <p><br />Статус<br />остается<br />навсегда*</p>
+        <div class="home__image-mob-infoblock-item">
+          <p>Статус остается навсегда*</p>
         </div>
       </div>
     </div>
 
-    <main-button-mob id="mobile_btn" />
-  </div>
+    <my-btn-mob id="mobile_btn">Участвовать</my-btn-mob>
+  </section>
 </template>
 
 <script setup>
-import mainButton from '@/components/ui/mainButton.vue'
-import mainButtonMob from '@/components/ui/mainButtonMob.vue'
+import myBtn from '@/components/ui/myBtn.vue'
+import myBtnMob from '@/components/ui/myBtnMob.vue'
 </script>
 
 <style lang="scss" scoped>
-.home_screen {
-  width: 1200px;
+@use '@/assets/variables' as vars;
+
+.home {
+  width: 85%;
   margin: 0 auto;
-  padding-top: 20px;
-
-  &_header {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    padding: 10px 0;
-    z-index: 10;
-    margin: 0 auto;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    box-shadow: inset 0px 0px 132.7px 0px rgba(0, 0, 0, 0.9);
-  }
-
-  &_logo {
-    img {
-      width: 200px;
-    }
-  }
-
-  &_image {
-    position: relative;
-    width: 1200px;
-    margin: 0 auto;
-    margin-top: 210px;
-
-    &_main {
-      width: 100%;
-    }
-
-    &_crown {
-      position: absolute;
-      top: -125px;
-      left: -50px;
-      width: 180px;
-    }
-
-    &_mobile {
-      display: none;
-    }
-  }
+  padding-top: 2rem;
 }
 
-h1 {
-  font-weight: 900px;
-  font-size: 50px;
-  line-height: 50px;
-  background: linear-gradient(104.48deg, #d9a317 -4.75%, #ffe585 57.57%, #fbbc21 98.1%);
+.home__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  padding: 1rem 0;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 0px 132.7px 0px rgba(0, 0, 0, 0.9);
+}
+
+.home__logo {
+  width: 15%;
+}
+
+.home__logo-img {
+  width: 100%;
+}
+
+.home__image {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 16%;
+}
+
+.home__image-main {
+  width: 100%;
+}
+
+.home__image-crown {
+  position: absolute;
+  top: -23%;
+  left: -4%;
+  width: 15%;
+}
+
+.home__image-mob {
+  display: none;
+  margin: 0 auto;
+  position: relative;
+  padding: 2rem;
+  border-radius: 2rem;
+  background: rgba(0, 53, 148, 1);
+  box-shadow: inset 0px 0px 132.7px 0px rgba(0, 0, 0, 0.9);
+}
+
+.home__image-mob-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  text-shadow: vars.$title-text-shadow;
+}
+
+.home__image-mob-infoblock {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home__image-mob-infoblock-item {
+  width: 25%;
+  height: 100px;
+  padding: 1rem;
+  border-radius: 2rem;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(33, 18, 97, 0.2);
+  border: 0.4px solid rgba(33, 18, 97, 0.6);
+  box-shadow: 0px 0px 12.77px 0px rgba(0, 0, 0, 0.8) inset;
+}
+
+.home__image-mob-infoblock-item--dark {
+  background: rgba(33, 18, 97, 0.8);
+}
+
+.home__title {
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  background: vars.$linear-gradient;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-transform: uppercase;
 }
 
 #mobile_btn {
   display: none;
-}
-
-@media (max-width: 1300px) {
-  .home_screen {
-    width: 85%;
-
-    &_logo {
-      img {
-        width: 150px;
-      }
-    }
-
-    &_image {
-      width: 100%;
-
-      &_crown {
-        top: -120px;
-        left: -55px;
-        width: 180px;
-      }
-    }
-  }
-
-  h1 {
-    font-size: 40px;
-  }
+  margin-top: 1.5rem;
 }
 
 @media (max-width: 1200px) {
-  .home_screen {
-    &_logo {
-      img {
-        width: 140px;
-      }
-    }
-
-    &_image {
-      margin-top: 205px;
-
-      &_crown {
-        top: -120px;
-        left: -55px;
-        width: 180px;
-      }
-    }
-  }
-
-  h1 {
-    font-size: 35px;
+  .home__image {
+    margin-top: 20%;
   }
 }
 
-@media (max-width: 992px) {
-  .home_screen {
-    &_header {
-      margin-top: 0;
-      align-items: center;
-    }
-
-    &_logo {
-      img {
-        width: 110px;
-      }
-    }
-
-    &_image {
-      margin-top: 190px;
-
-      &_crown {
-        top: -100px;
-        left: -45px;
-        width: 150px;
-      }
-    }
+@media (max-width: 768px) {
+  .home__header {
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    background: inherit;
+    box-shadow: none;
+    padding: 0;
   }
 
-  h1 {
-    font-size: 30px;
-  }
-}
-
-@media (max-width: 767px) {
-  .home_screen {
-    &_image {
-      &_crown {
-        top: -60px;
-        left: -26px;
-        width: 90px;
-      }
-    }
-
-    &_header {
-      position: relative;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      background: inherit;
-      box-shadow: none;
-      padding: 0;
-    }
-
-    &_image {
-      display: none;
-
-      &_mobile {
-        display: block;
-        position: relative;
-        padding: 20px;
-        border-radius: 20px;
-        background: rgba(0, 53, 148, 1);
-        box-shadow: inset 0px 0px 132.7px 0px rgba(0, 0, 0, 0.9);
-
-        &_title {
-          font-size: 20px;
-          font-weight: 700;
-          margin-top: 15px;
-          text-shadow:
-            1px 1px 20px #030513,
-            1px 1px 20px #030513,
-            1px 1px 20px #030513,
-            1px 1px 20px #030513;
-        }
-
-        &_infoblock {
-          margin-top: 20px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-
-        &_infoblock_item {
-          width: 25%;
-          height: 130px;
-          padding: 10px;
-          border-radius: 20px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          background: rgba(33, 18, 97, 0.2);
-          border: 0.4px solid rgba(33, 18, 97, 0.6);
-          box-shadow: 0px 0px 12.77px 0px rgba(0, 0, 0, 0.8) inset;
-
-          img {
-            width: 30px;
-            margin-bottom: 10px;
-          }
-        }
-      }
-    }
+  .home__logo {
+    width: 25%;
   }
 
-  #dark_infoblock {
-    background: rgba(33, 18, 97, 0.8);
-  }
-
-  h1 {
-    font-size: 30px;
-    line-height: 40px;
-    margin-bottom: 20px;
-  }
-
+  .home__image,
   #desktop_btn {
     display: none;
   }
 
+  .home__image-mob,
   #mobile_btn {
     display: block;
-    margin-top: 15px;
+  }
+
+  .home__title {
+    margin-bottom: 2rem;
   }
 }
 
 @media (max-width: 576px) {
-  .home_screen {
-    &_image {
-      &_crown {
-        top: -50px;
-        left: -23px;
-        width: 75px;
-      }
-
-      &_mobile {
-        padding: 10px;
-
-        &_title {
-          font-size: 16px;
-          margin-top: 10px;
-        }
-
-        &_infoblock {
-          margin-top: 10px;
-        }
-
-        &_infoblock_item {
-          width: 25%;
-          height: 140px;
-          padding: 0 10px;
-          font-size: 11px;
-        }
-      }
-    }
+  .home__logo {
+    width: 30%;
   }
 
-  h1 {
-    width: 350px;
+  .home__image-mob-infoblock {
+    flex-direction: column;
   }
-}
 
-@media (max-width: 370px) {
-  h1 {
-    font-size: 25px;
-    width: 300px;
+  .home__image-mob-infoblock-item {
+    width: 90%;
+    height: 55px;
+    padding: 0 5%;
+    margin: 5px 0;
   }
 }
 </style>

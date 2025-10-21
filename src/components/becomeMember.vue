@@ -1,149 +1,88 @@
 <template>
-  <section class="become_member">
-    <h2>Как стать участником</h2>
+  <section class="become-member">
+    <h2 class="become-member__title">Как стать участником</h2>
 
-    <div class="become_member_item" id="bm_1">
-      <img src="/num-1.svg" alt="" />
-      <p>
+    <div class="become-member__item become-member__item--first">
+      <img class="become-member__image" src="/num-1.svg" alt="Шаг 1" role="presentation" />
+      <p class="become-member__text">
         Быть клиентом «Балтбет», прошедшим регистрацию и идентификацию, или стать им, нажав кнопку
         «Участвовать».
       </p>
     </div>
 
-    <div class="become_member_item" id="bm_2">
-      <img src="/num-2.svg" alt="" />
-      <p>Заключить пари можно на сайте или в мобильном приложении «Балтбет».</p>
+    <div class="become-member__item become-member__item--second">
+      <img class="become-member__image" src="/num-2.svg" alt="Шаг 2" role="presentation" />
+      <p class="become-member__text">
+        Заключить пари можно на сайте или в мобильном приложении «Балтбет».
+      </p>
     </div>
   </section>
 </template>
 
 <style lang="scss" scoped>
-.become_member {
-  width: 55%;
-  margin: 0 auto;
-  margin-top: 40px;
+@use '@/assets/variables' as vars;
+
+.become-member {
+  width: 70%;
+  margin: 40px auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(5, 1fr);
-
-  &_item {
-    position: relative;
-    width: 250px;
-    font-size: 20px;
-    text-align: left;
-
-    img {
-      height: 150px;
-      position: absolute;
-      top: -30px;
-      left: -50px;
-      z-index: -5;
-    }
-  }
 }
 
-h2 {
-  font-weight: 900;
-  font-size: 50px;
+.become-member__item {
+  position: relative;
+  width: 80%;
+  font-size: 2rem;
   text-align: left;
-  text-shadow:
-    1px 1px 20px #030513,
-    1px 1px 20px #030513,
-    1px 1px 20px #030513,
-    1px 1px 20px #030513;
+}
+
+.become-member__image {
+  height: 14rem;
+  position: absolute;
+  top: -3rem;
+  left: -25%;
+  z-index: -5;
+}
+
+.become-member__title {
+  text-align: right;
+  text-shadow: vars.$title-text-shadow;
   grid-column: 2 / 3;
   grid-row: 2 / 5;
   align-self: center;
 }
 
-#bm_1 {
+.become-member__item--first {
   grid-column: 1 / 2;
   grid-row: 1 / 3;
 }
 
-#bm_2 {
+.become-member__item--second {
   grid-column: 1 / 2;
   grid-row: 4 / 6;
-  align-self: flex-end;
+  align-self: end;
 }
 
-@media (max-width: 1300px) {
-  h2 {
-    font-size: 45px;
-  }
-}
-
-@media (max-width: 1200px) {
-  h2 {
-    font-size: 35px;
-    justify-self: center;
-    align-self: center;
-  }
-}
-
-@media (max-width: 992px) {
-  h2 {
-    font-size: 30px;
-  }
-
-  .become_member {
+@media (max-width: 768px) {
+  .become-member {
     width: 75%;
-    margin-bottom: 40px;
-
-    &_item {
-      width: 250px;
-      font-size: 16px;
-      justify-self: center;
-
-      img {
-        height: 120px;
-      }
-    }
-  }
-}
-
-@media (max-width: 767px) {
-  .become_member {
-    width: 85%;
-    height: 40vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-
-    &_item {
-      width: 90%;
-      font-size: 15px;
-
-      img {
-        height: 120px;
-      }
-    }
-
-    #bm_1,
-    #bm_2 {
-      align-self: center;
-    }
-  }
-}
-
-@media (max-width: 576px) {
-  h2 {
-    font-size: 20px;
+    justify-content: space-between;
   }
 
-  .become_member {
-    width: 95%;
-    margin: 20px auto;
+  .become-member__item {
+    margin: 12px 0;
+  }
 
-    &_item {
-      width: 70%;
+  .become-member__image {
+    left: -20%;
+  }
 
-      img {
-        height: 80px;
-        left: -30px;
-        top: -15px;
-      }
-    }
+  .become-member__item--first,
+  .become-member__item--second {
+    align-self: center;
   }
 }
 </style>

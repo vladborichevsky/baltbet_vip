@@ -1,11 +1,11 @@
 <template>
   <home-screen />
   <become-member />
-  <levels-and-bonuses />
-  <advantages-block />
+  <levels-block />
+  <adv-block />
   <!-- динамически загружаем компоненты через mutationObserver -->
   <div ref="lowerPart">
-    <component v-if="showLowerPart" :is="FaqBlock" />
+    <component v-if="showLowerPart" :is="faqBlock" />
     <component v-if="showLowerPart" :is="footerBlock" />
   </div>
 </template>
@@ -15,10 +15,10 @@ import { ref, onMounted, defineAsyncComponent } from 'vue'
 
 import homeScreen from '@/components/homeScreen.vue'
 import becomeMember from '@/components/becomeMember.vue'
-import levelsAndBonuses from '@/components/levelsAndBonuses.vue'
-import advantagesBlock from '@/components/advantagesBlock.vue'
+import levelsBlock from '@/components/levelsBlock.vue'
+import advBlock from '@/components/advBlock.vue'
 
-const FaqBlock = defineAsyncComponent(() => import('@/components/FaqBlock.vue')) // динамически загружаем компонент через mutationObserver
+const faqBlock = defineAsyncComponent(() => import('@/components/faqBlock.vue')) // динамически загружаем компонент через mutationObserver
 const footerBlock = defineAsyncComponent(() => import('@/components/footerBlock.vue')) // динамически загружаем компонент через mutationObserver
 
 // динамически загружаем компоненты через mutationObserver

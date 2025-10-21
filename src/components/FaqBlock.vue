@@ -1,84 +1,59 @@
 <template>
   <section class="faq">
-    <h2 class="h2_desc">Часто<br />задаваемые<br />вопросы (FAQ)</h2>
-    <h2 class="h2_mob">Часто задаваемые вопросы (FAQ)</h2>
+    <h2 class="faq__title">Часто задаваемые вопросы (FAQ)</h2>
 
-    <faq-item id="question_1">
-      <div class="faq_item_question">
-        Могу ли я участвовать в других акциях одновременно с этой?
-      </div>
-      <div class="faq_item_answer">Да, ограничений нет.</div>
-    </faq-item>
+    <faq-item id="question_1" :content="faqItem1" />
 
-    <faq-item id="question_2">
-      <div class="faq_item_question">Как принять участие в акции?</div>
-      <div class="faq_item_answer">
-        Для того чтобы принять участие в Акции необходимо совершать пари в разделах «Линии» или
-        «LIVE» на сайте baltbet.ru или мобильном приложение «Балтбет».
-      </div>
-    </faq-item>
+    <faq-item id="question_2" :content="faqItem2" />
 
-    <faq-item id="question_3">
-      <div class="faq_item_question">Сколько времени действует VIP статус после получения?</div>
-      <div class="faq_item_answer">Cтатус действует до окончания акции.</div>
-    </faq-item>
+    <faq-item id="question_3" :content="faqItem3" />
 
-    <faq-item id="question_4">
-      <div class="faq_item_question">
-        Какие ставки учитываются для повышения VIP статуса/получения кешбэка?
-      </div>
-      <div class="faq_item_answer">
-        В рамках настоящей Акции учитываются ординары (одиночное пари) с коэффициентами не менее 1.1
-        и экспрессы с коэффициентами каждого исхода не менее 1.1.
-      </div>
-    </faq-item>
+    <faq-item id="question_4" :content="faqItem4" />
   </section>
 </template>
 
 <script setup>
-import FaqItem from '@/components/ui/FaqItem.vue'
+import faqItem from '@/components/faqItem.vue'
+
+const faqItem1 = {
+  question: ' Могу ли я участвовать в других акциях одновременно с этой?',
+  answer: 'Да, ограничений нет.',
+}
+
+const faqItem2 = {
+  question: 'Как принять участие в акции?',
+  answer:
+    'Для того чтобы принять участие в Акции, необходимо совершать пари в разделах «Линии» или «LIVE» на сайте baltbet.ru или в мобильном приложении «Балтбет».',
+}
+
+const faqItem3 = {
+  question: 'Сколько времени действует VIP статус после получения?',
+  answer: 'Cтатус действует до окончания акции.',
+}
+
+const faqItem4 = {
+  question: 'Какие ставки учитываются для повышения VIP статуса/получения кешбэка?',
+  answer:
+    'В рамках настоящей Акции учитываются ординары (одиночное пари) с коэффициентами не менее 1.1 и экспрессы с коэффициентами каждого исхода не менее 1.1.',
+}
 </script>
 
 <style lang="scss" scoped>
-.h2_desc {
-  font-weight: 900;
-  font-size: 50px;
-  text-align: right;
-  margin: 10px;
-  text-shadow:
-    1px 1px 20px #030513,
-    1px 1px 20px #030513,
-    1px 1px 20px #030513,
-    1px 1px 20px #030513;
-  grid-column: 1 / 3;
-  grid-row: 1 / 1;
-  justify-self: center;
-}
-
-.h2_mob {
-  display: none;
-}
+@use '@/assets/variables' as vars;
 
 .faq {
   width: 85%;
   margin: 0 auto;
   display: grid;
-  margin-top: 20px;
-  grid-template-columns: 1fr 1fr 1fr 0.8fr;
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
 }
 
-.faq_item {
-  &_question {
-    font-weight: 700;
-    font-size: 20px;
-  }
-
-  &_answer {
-    margin-top: 10px;
-    font-weight: 300;
-    font-size: 20px;
-  }
+.faq__title {
+  text-shadow: vars.$title-text-shadow;
+  grid-column: 1 / 3;
+  grid-row: 1 / 1;
+  align-self: center;
 }
 
 #question_1 {
@@ -101,45 +76,15 @@ import FaqItem from '@/components/ui/FaqItem.vue'
   grid-row: 2 / 3;
 }
 
-@media (max-width: 1300px) {
-  .h2_desc {
-    font-size: 45px;
-  }
-
-  .faq {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 1200px) {
-  .h2_desc {
-    font-size: 35px;
-  }
-}
-
 @media (max-width: 992px) {
   .faq {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 0.5fr 1fr 1fr 1fr;
   }
 
-  .h2_desc {
-    display: none;
-  }
-
-  .h2_mob {
-    display: block;
-    font-size: 30px;
-    font-weight: 900;
-    text-align: center;
+  .faq__title {
     grid-column: 1 / 3;
     grid-row: 1 / 2;
-    margin: 10px;
-    text-shadow:
-      1px 1px 20px #030513,
-      1px 1px 20px #030513,
-      1px 1px 20px #030513,
-      1px 1px 20px #030513;
   }
 
   #question_1 {
@@ -163,31 +108,9 @@ import FaqItem from '@/components/ui/FaqItem.vue'
   }
 }
 
-@media (max-width: 768px) {
-  .faq_item {
-    padding: 10px;
-
-    &_question,
-    &_answer {
-      font-size: 15px;
-    }
-  }
-}
-
 @media (max-width: 576px) {
-  .h2_mob {
-    font-size: 20px;
-    margin: 0;
-    align-self: center;
-  }
-
   .faq {
-    margin: 0 auto;
-
-    &_item_question,
-    &_item_answer {
-      font-size: 11px;
-    }
+    grid-template-rows: 0.2fr 1fr 1fr 1fr;
   }
 }
 </style>
